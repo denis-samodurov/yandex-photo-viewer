@@ -11,7 +11,7 @@ import com.denissamodurov.yandexphotoviewer.R;
 /**
  * A placeholder fragment containing a simple view.
  */
-public class StripFragment extends Fragment {
+public class StripFragment extends Fragment implements StripFragmentView{
 
     public StripFragment() {
     }
@@ -21,4 +21,8 @@ public class StripFragment extends Fragment {
                              Bundle savedInstanceState) {
         return inflater.inflate(R.layout.strip_fragment, container, false);
     }
+}
+
+interface StripFragmentView {
+
 }

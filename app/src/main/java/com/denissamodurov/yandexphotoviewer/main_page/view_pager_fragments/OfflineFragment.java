@@ -12,7 +12,7 @@ import com.denissamodurov.yandexphotoviewer.R;
  * Created by denissamodurov on 05/05/2018.
  */
 
-public class OfflineFragment extends Fragment {
+public class OfflineFragment extends Fragment implements OfflineFragmentView {
     public OfflineFragment() {
     }
 
@@ -21,4 +21,8 @@ public class OfflineFragment extends Fragment {
                              Bundle savedInstanceState) {
         return inflater.inflate(R.layout.all_file_fragment, container, false);
     }
+}
+
+interface OfflineFragmentView {
+
 }

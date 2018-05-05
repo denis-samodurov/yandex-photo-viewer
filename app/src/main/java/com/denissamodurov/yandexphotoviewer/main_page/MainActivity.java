@@ -3,13 +3,20 @@ package com.denissamodurov.yandexphotoviewer.main_page;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.design.widget.TabLayout;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 import com.denissamodurov.yandexphotoviewer.R;
+import com.denissamodurov.yandexphotoviewer.main_page.adapter.ViewPagerAdapter;
+import com.denissamodurov.yandexphotoviewer.main_page.view_pager_fragments.AllFileFragment;
+import com.denissamodurov.yandexphotoviewer.main_page.view_pager_fragments.FileFragment;
+import com.denissamodurov.yandexphotoviewer.main_page.view_pager_fragments.OfflineFragment;
+import com.denissamodurov.yandexphotoviewer.main_page.view_pager_fragments.StripFragment;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -17,10 +24,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_activity);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.main_activity_toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.main_activity_fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -28,6 +35,22 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+
+        setupViewPager();
+    }
+
+    private void setupViewPager() {
+        ViewPager viewPager = findViewById(R.id.content_main_pager);
+        ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
+
+        adapter.addFragment(new StripFragment(), getString(R.string.strip));
+        adapter.addFragment(new FileFragment(), getString(R.string.files));
+        adapter.addFragment(new AllFileFragment(), getString(R.string.all_files));
+        adapter.addFragment(new OfflineFragment(), getString(R.string.offline));
+        viewPager.setAdapter(adapter);
+
+        TabLayout tabLayout = findViewById(R.id.content_main_tabs);
+        tabLayout.setupWithViewPager(viewPager);
     }
 
     @Override

@@ -12,7 +12,7 @@ import com.denissamodurov.yandexphotoviewer.R;
  * Created by denissamodurov on 05/05/2018.
  */
 
-public class AllFileFragment extends Fragment {
+public class AllFileFragment extends Fragment implements AllFileFragmentView{
     public AllFileFragment() {
     }
 
@@ -21,4 +21,8 @@ public class AllFileFragment extends Fragment {
                              Bundle savedInstanceState) {
         return inflater.inflate(R.layout.all_file_fragment, container, false);
     }
+}
+
+interface AllFileFragmentView {
+
 }
