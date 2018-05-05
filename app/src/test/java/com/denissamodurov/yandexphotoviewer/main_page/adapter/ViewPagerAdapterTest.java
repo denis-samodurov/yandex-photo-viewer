@@ -35,9 +35,9 @@ public class ViewPagerAdapterTest {
 
     @Test
     public void getItem() throws Exception {
-        Assert.assertNotNull("Incorrect at negative index",
+        Assert.assertNull("Incorrect at negative index",
                 adapter.getItem(-1));
-        Assert.assertNotNull("Incorrect at index out of list",
+        Assert.assertNull("Incorrect at index out of list",
                 adapter.getItem(1));
 
         Fragment fragment = new Fragment();
