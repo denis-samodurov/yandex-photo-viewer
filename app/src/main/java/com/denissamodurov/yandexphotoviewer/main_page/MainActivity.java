@@ -1,4 +1,4 @@
-package com.denissamodurov.yandexphotoviewer;
+package com.denissamodurov.yandexphotoviewer.main_page;
 
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -8,6 +8,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+
+import com.denissamodurov.yandexphotoviewer.R;
 
 public class MainActivity extends AppCompatActivity {
 
