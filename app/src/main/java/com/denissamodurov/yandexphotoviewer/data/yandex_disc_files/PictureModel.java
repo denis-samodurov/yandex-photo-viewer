@@ -14,6 +14,7 @@ import lombok.Setter;
 
 @Getter @Setter @AllArgsConstructor
 public class PictureModel {
+    private String title;
     private Bitmap picture;
     private Date date;
 }
