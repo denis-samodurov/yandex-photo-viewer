@@ -57,7 +57,7 @@ public class YandexDiscPictureService implements PictureService {
                 JSONObject object = fileItems.getJSONObject(i);
 
                 String title = object.getString("name");
-                String date = object.getString("created");
+                String date = object.getString("created").substring(0, 10);
 
                 String fileUrl = object.getString("file");
                 Bitmap image = Glide.

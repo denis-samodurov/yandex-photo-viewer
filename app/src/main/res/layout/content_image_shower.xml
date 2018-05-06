@@ -10,9 +10,11 @@
     tools:showIn="@layout/activity_image_shower">
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/content_image_shower_picture"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginTop="32dp"
+        android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
