@@ -60,6 +60,7 @@ public class StripFragment extends Fragment {
     public void setPictureModels(List<PictureModel> pictureModels) {
         this.pictureModels = pictureModels;
         if(mAdapter != null){
+            mAdapter.setPictureList(pictureModels);
             mAdapter.notifyDataSetChanged();
         }
     }

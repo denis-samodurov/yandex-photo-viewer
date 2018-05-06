@@ -14,9 +14,9 @@ import android.view.View;
 import android.widget.ProgressBar;
 
 import com.denissamodurov.yandexphotoviewer.R;
-import com.denissamodurov.yandexphotoviewer.data.yandex_disc_files.MockPictureService;
 import com.denissamodurov.yandexphotoviewer.data.yandex_disc_files.PictureModel;
 import com.denissamodurov.yandexphotoviewer.data.yandex_disc_files.PictureService;
+import com.denissamodurov.yandexphotoviewer.data.yandex_disc_files.YandexDiscPictureService;
 import com.denissamodurov.yandexphotoviewer.main_page.adapter.ViewPagerAdapter;
 import com.denissamodurov.yandexphotoviewer.main_page.view_pager_fragments.AllFileFragment;
 import com.denissamodurov.yandexphotoviewer.main_page.view_pager_fragments.FileFragment;
@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setupServices() {
-        mPictureService = new MockPictureService(this);
+        mPictureService = new YandexDiscPictureService(this);
     }
 
     private void setupViewPager() {

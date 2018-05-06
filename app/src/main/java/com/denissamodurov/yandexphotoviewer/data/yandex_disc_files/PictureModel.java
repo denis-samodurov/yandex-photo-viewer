@@ -2,8 +2,6 @@ package com.denissamodurov.yandexphotoviewer.data.yandex_disc_files;
 
 import android.graphics.Bitmap;
 
-import java.util.Date;
-
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
@@ -16,5 +14,5 @@ import lombok.Setter;
 public class PictureModel {
     private String title;
     private Bitmap picture;
-    private Date date;
+    private String date;
 }

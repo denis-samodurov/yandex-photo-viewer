@@ -13,7 +13,6 @@ import android.widget.Toast;
 
 import com.denissamodurov.yandexphotoviewer.R;
 import com.denissamodurov.yandexphotoviewer.data.yandex_disc_files.PictureModel;
-import com.denissamodurov.yandexphotoviewer.util.DateUtil;
 
 import java.util.List;
 
@@ -41,7 +40,7 @@ public class PictureAdapter extends RecyclerView.Adapter<PictureHolder> {
     public void onBindViewHolder(@NonNull final PictureHolder holder, int position) {
         PictureModel pictureModel = pictureList.get(position);
         holder.title.setText(pictureModel.getTitle());
-        holder.date.setText(DateUtil.dateFormetterForMainScreen(pictureModel.getDate()));
+        holder.date.setText(pictureModel.getDate());
         holder.picture.setImageBitmap(pictureModel.getPicture());
 
         holder.overflow.setOnClickListener(new View.OnClickListener() {
