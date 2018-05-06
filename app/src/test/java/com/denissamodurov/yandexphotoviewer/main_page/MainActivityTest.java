@@ -20,6 +20,13 @@ public class MainActivityTest {
     public void initialize() {
         activity = Robolectric.buildActivity(MainActivity.class).create().start().resume().get();
     }
+
+    @Test
+    public void shouldUseApplicationLabelFromManifestAsTitleForActivity() throws Exception {
+        Assert.assertNotNull(activity.getTitle());
+        Assert.assertEquals(activity.getTitle().toString(), activity.getString(R.string.app_name));
+    }
+
     @Test
     public void setupViewPagerTest(){
         ViewPager viewPager = activity.findViewById(R.id.content_main_pager);

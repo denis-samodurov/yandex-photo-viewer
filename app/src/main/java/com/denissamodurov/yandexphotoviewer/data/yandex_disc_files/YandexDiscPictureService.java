@@ -86,6 +86,7 @@ public class YandexDiscPictureService implements PictureService {
     private JSONArray getFileItems(){
         URL url = getResourcesUpdateUrl();
         Request request = new Request.Builder()
+                //Необходимо давить авторизацию, а на хардкобить токен, плюс это не безопастно
                 .addHeader("Authorization", "OAuth AQAAAAAdB1_pAADLW2ZRUCVHM0O5hZ6P37ES05g")
                 .addHeader("cache-control", "no-cache")
                 .url(url)
