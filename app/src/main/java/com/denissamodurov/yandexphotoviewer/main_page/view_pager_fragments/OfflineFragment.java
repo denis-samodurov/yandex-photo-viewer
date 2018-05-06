@@ -9,7 +9,7 @@ import android.view.ViewGroup;
 
 import com.denissamodurov.yandexphotoviewer.R;
 
-public class OfflineFragment extends Fragment implements OfflineFragmentView {
+public class OfflineFragment extends Fragment {
     public OfflineFragment() {
     }
 
@@ -18,8 +18,4 @@ public class OfflineFragment extends Fragment implements OfflineFragmentView {
                              Bundle savedInstanceState) {
         return inflater.inflate(R.layout.offline_fragment, container, false);
     }
-}
-
-interface OfflineFragmentView {
-
 }

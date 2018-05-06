@@ -9,7 +9,7 @@ import android.view.ViewGroup;
 
 import com.denissamodurov.yandexphotoviewer.R;
 
-public class FileFragment extends Fragment implements FileFragmentView {
+public class FileFragment extends Fragment {
     public FileFragment() {
     }
 
@@ -18,8 +18,4 @@ public class FileFragment extends Fragment implements FileFragmentView {
                              Bundle savedInstanceState) {
         return inflater.inflate(R.layout.file_fragment, container, false);
     }
-}
-
-interface FileFragmentView {
-
 }
