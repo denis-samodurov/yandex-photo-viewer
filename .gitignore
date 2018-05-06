@@ -12,6 +12,8 @@
 bin/
 gen/
 out/
+app/libs/
+app/release/output.json
 
 # Gradle files
 .gradle/
@@ -53,3 +55,6 @@ google-services.json
 freeline.py
 freeline/
 freeline_project_description.json
+
+#Files containing sensitive information
+keystore.properties
