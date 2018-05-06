@@ -10,7 +10,6 @@ import com.denissamodurov.yandexphotoviewer.util.ImageUtil;
 
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 public class MockPictureService implements PictureService {
@@ -30,13 +29,13 @@ public class MockPictureService implements PictureService {
         Bitmap bitmap = ImageUtil.drawableToBitmap(drawable);
 
         List<PictureModel> pictureModels = new ArrayList<>();
-        pictureModels.add(new PictureModel("First image", bitmap, new Date(1220227200L * 1000)));
-        pictureModels.add(new PictureModel("Second image", bitmap, new Date(System.currentTimeMillis())));
-        pictureModels.add(new PictureModel("Third image", bitmap, new Date(System.currentTimeMillis())));
-        pictureModels.add(new PictureModel("Third image", bitmap, new Date(System.currentTimeMillis())));
-        pictureModels.add(new PictureModel("Third image", bitmap, new Date(System.currentTimeMillis())));
-        pictureModels.add(new PictureModel("Third image", bitmap, new Date(System.currentTimeMillis())));
-        pictureModels.add(new PictureModel("Third image", bitmap, new Date(System.currentTimeMillis())));
+        pictureModels.add(new PictureModel("First image", bitmap, "2014-12-13"));
+        pictureModels.add(new PictureModel("Second image", bitmap, "2014-12-13"));
+        pictureModels.add(new PictureModel("Third image", bitmap, "2014-12-13"));
+        pictureModels.add(new PictureModel("Third image", bitmap, "2014-12-13"));
+        pictureModels.add(new PictureModel("Third image", bitmap, "2014-12-13"));
+        pictureModels.add(new PictureModel("Third image", bitmap, "2014-12-13"));
+        pictureModels.add(new PictureModel("Third image", bitmap, "2014-12-13"));
 
         return pictureModels;
     }
