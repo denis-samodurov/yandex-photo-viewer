@@ -80,7 +80,7 @@ public class PictureAdapter extends RecyclerView.Adapter<PictureHolder> {
         public boolean onMenuItemClick(MenuItem menuItem) {
             switch (menuItem.getItemId()) {
                 case R.id.action_remove_picture:
-                    Toast.makeText(mContext, "Remove picture", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(mContext, mContext.getString(R.string.remove_image), Toast.LENGTH_SHORT).show();
                     return true;
                 default:
             }
