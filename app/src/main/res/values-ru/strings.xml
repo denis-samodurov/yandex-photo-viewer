@@ -4,4 +4,5 @@
     <string name="files">Файлы</string>
     <string name="all_files">Все файлы</string>
     <string name="offline">Оффлайн</string>
+    <string name="remove_picture">Удалить картинку</string>
 </resources>

@@ -5,4 +5,5 @@
     <string name="files">Files</string>
     <string name="all_files">All files</string>
     <string name="offline">Offline</string>
+    <string name="remove_picture">Remove picture</string>
 </resources>
