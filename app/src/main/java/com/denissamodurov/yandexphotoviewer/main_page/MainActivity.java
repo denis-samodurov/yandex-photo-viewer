@@ -3,7 +3,6 @@ package com.denissamodurov.yandexphotoviewer.main_page;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
@@ -12,6 +11,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ProgressBar;
+import android.widget.Toast;
 
 import com.denissamodurov.yandexphotoviewer.R;
 import com.denissamodurov.yandexphotoviewer.data.yandex_disc_files.PictureModel;
@@ -33,7 +33,6 @@ public class MainActivity extends AppCompatActivity {
 
     private ProgressBar mProgressBar;
     private PictureService mPictureService;
-    private PictureTask mPictureTask;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,8 +46,8 @@ public class MainActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                Toast.makeText(view.getContext(), view.getContext().getString(R.string.add_image),
+                        Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -77,30 +76,22 @@ public class MainActivity extends AppCompatActivity {
 
 
     private void setupData() {
-        mPictureTask = new PictureTask();
-        mPictureTask.execute();
+        PictureTask pictureTask = new PictureTask();
+        pictureTask.execute();
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
+        return id == R.id.action_settings || super.onOptionsItemSelected(item);
 
-        return super.onOptionsItemSelected(item);
     }
 
     class PictureTask extends AsyncTask<Void, Void, List<PictureModel>> {
@@ -112,8 +103,7 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         protected List<PictureModel> doInBackground(Void... params) {
-            List<PictureModel> allPicture = mPictureService.getAllPicture();
-            return allPicture;
+            return mPictureService.getAllPicture();
         }
 
         @Override

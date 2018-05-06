@@ -1,8 +1,11 @@
 <resources>
+    <string name="title_activity_image_shower">Просмотр картинки</string>
+
     <string name="action_settings">Настройки</string>
     <string name="strip">Лента</string>
     <string name="files">Файлы</string>
     <string name="all_files">Все файлы</string>
     <string name="offline">Оффлайн</string>
-    <string name="remove_picture">Удалить картинку</string>
+    <string name="remove_image">Удалить картинку</string>
+    <string name="add_image">Добавить картинку</string>
 </resources>

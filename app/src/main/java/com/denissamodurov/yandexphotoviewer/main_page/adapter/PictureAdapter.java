@@ -1,6 +1,7 @@
 package com.denissamodurov.yandexphotoviewer.main_page.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.PopupMenu;
 import android.support.v7.widget.RecyclerView;
@@ -13,6 +14,7 @@ import android.widget.Toast;
 
 import com.denissamodurov.yandexphotoviewer.R;
 import com.denissamodurov.yandexphotoviewer.data.yandex_disc_files.PictureModel;
+import com.denissamodurov.yandexphotoviewer.image_shower.ImageShowerActivity;
 
 import java.util.List;
 
@@ -38,10 +40,18 @@ public class PictureAdapter extends RecyclerView.Adapter<PictureHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull final PictureHolder holder, int position) {
-        PictureModel pictureModel = pictureList.get(position);
+        final PictureModel pictureModel = pictureList.get(position);
         holder.title.setText(pictureModel.getTitle());
         holder.date.setText(pictureModel.getDate());
         holder.picture.setImageBitmap(pictureModel.getPicture());
+
+        holder.picture.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = ImageShowerActivity.getIntent(mContext, pictureModel.getPicture());
+                mContext.startActivity(intent);
+            }
+        });
 
         holder.overflow.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -70,7 +80,7 @@ public class PictureAdapter extends RecyclerView.Adapter<PictureHolder> {
         public boolean onMenuItemClick(MenuItem menuItem) {
             switch (menuItem.getItemId()) {
                 case R.id.action_remove_picture:
-                    Toast.makeText(mContext, "Remove picture", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(mContext, mContext.getString(R.string.remove_image), Toast.LENGTH_SHORT).show();
                     return true;
                 default:
             }
