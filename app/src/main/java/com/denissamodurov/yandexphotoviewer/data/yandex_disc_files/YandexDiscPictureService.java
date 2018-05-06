@@ -12,11 +12,13 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 import java.lang.ref.WeakReference;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 
+import okhttp3.HttpUrl;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
@@ -82,10 +84,11 @@ public class YandexDiscPictureService implements PictureService {
     }
 
     private JSONArray getFileItems(){
+        URL url = getResourcesUpdateUrl();
         Request request = new Request.Builder()
                 .addHeader("Authorization", "OAuth AQAAAAAdB1_pAADLW2ZRUCVHM0O5hZ6P37ES05g")
                 .addHeader("cache-control", "no-cache")
-                .url("https://cloud-api.yandex.net:443/v1/disk/resources/last-uploaded?limit=5&media_type=image")
+                .url(url)
                 .get()
                 .build();
 
@@ -105,5 +108,15 @@ public class YandexDiscPictureService implements PictureService {
         }
 
         return null;
+    }
+
+    private URL getResourcesUpdateUrl() {
+        return new HttpUrl.Builder()
+                .scheme("https")
+                .host("cloud-api.yandex.net")
+                .port(443)
+                .addPathSegments("v1/disk/resources/last-uploaded")
+                .addQueryParameter("media_type", "image")
+                .build().url();
     }
 }

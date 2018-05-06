@@ -7,4 +7,5 @@
     <string name="all_files">Все файлы</string>
     <string name="offline">Оффлайн</string>
     <string name="remove_image">Удалить картинку</string>
+    <string name="add_image">Добавить картинку</string>
 </resources>

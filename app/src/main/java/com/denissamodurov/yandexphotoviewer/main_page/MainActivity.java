@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(view.getContext(), view.getContext().getString(R.string.remove_image),
+                Toast.makeText(view.getContext(), view.getContext().getString(R.string.add_image),
                         Toast.LENGTH_SHORT).show();
             }
         });
